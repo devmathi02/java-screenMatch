@@ -4,6 +4,8 @@ import com.alulacursos.screenmatch.modelos.Episodio;
 import com.alulacursos.screenmatch.modelos.Pelicula;
 import com.alulacursos.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
@@ -51,6 +53,22 @@ public class Principal {
 
         filtroRecomendacion.filtra(episodio);
 
+        //inclucion de arraylist
+        var peliculaDeMathi = new Pelicula();
+        peliculaDeMathi.setNombre("El señor de los anillos");
+        peliculaDeMathi.setDuracionMinutos(180);
+        peliculaDeMathi.setFechaLanzamiento(2001);
+
+        ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+        listaDePeliculas.add(peliculaDeMathi);
+        listaDePeliculas.add(miPelicula);
+        listaDePeliculas.add(otraPelicula);
+
+
+        System.out.println("tamaño de la lista: " + listaDePeliculas.size());
+        System.out.println("la primera pelicula es: " + listaDePeliculas.get(0).getNombre());
+
+        System.out.println("lista de peliculas: " + listaDePeliculas);
 
 
     }
