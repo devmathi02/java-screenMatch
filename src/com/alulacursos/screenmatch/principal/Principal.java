@@ -1,3 +1,5 @@
+package com.alulacursos.screenmatch.principal;
+
 import com.alulacursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.alulacursos.screenmatch.calculos.FiltroRecomendacion;
 import com.alulacursos.screenmatch.modelos.Episodio;
@@ -8,10 +10,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-
-        miPelicula.setNombre("Super Mario Bross");
-        miPelicula.setFechaLanzamiento(2023);
+        Pelicula miPelicula = new Pelicula("Super Mario Bross", 2023);
         miPelicula.setDuracionMinutos(92);
         miPelicula.setIncluidoEnPlan(true);
 
@@ -22,18 +21,14 @@ public class Principal {
         System.out.println(miPelicula.getTotalDeEvaluaciones());
         System.out.println(miPelicula.calculaMedia());
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("La casa del dragon");
-        casaDragon.setFechaLanzamiento(2022);
+        Serie casaDragon = new Serie("La casa del dragon",2022);
         casaDragon.setTemporadas(1);
         casaDragon.setMinutosPorEpisodeos(50);
         casaDragon.setEpisodeosPorTemporadas(10);
         casaDragon.muestraFichaTecnica();
         System.out.println(casaDragon.getDuracionMinutos());
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("¿que paso ayer?");
-        otraPelicula.setFechaLanzamiento(2009);
+        Pelicula otraPelicula = new Pelicula("¿que paso ayer?", 2009);
         otraPelicula.setDuracionMinutos(100);
 
         CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
@@ -54,10 +49,8 @@ public class Principal {
         filtroRecomendacion.filtra(episodio);
 
         //inclucion de arraylist
-        var peliculaDeMathi = new Pelicula();
-        peliculaDeMathi.setNombre("El señor de los anillos");
+        var peliculaDeMathi = new Pelicula("El señor de los anillos", 2001);
         peliculaDeMathi.setDuracionMinutos(180);
-        peliculaDeMathi.setFechaLanzamiento(2001);
 
         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
         listaDePeliculas.add(peliculaDeMathi);
@@ -70,6 +63,7 @@ public class Principal {
 
         System.out.println("lista de peliculas: " + listaDePeliculas);
 
+        System.out.println("toString de la pelicula: " + listaDePeliculas.get(0).toString());
 
     }
 }
